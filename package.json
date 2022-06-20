@@ -30,6 +30,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^28.1.2",
+    "@types/react": "^18.0.14",
+    "@types/react-native": "^0.67.9",
     "jest": "^28.1.1",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
@@ -40,5 +42,9 @@
   },
   "files": [
     "lib/**/*"
-  ]
+  ],
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-native": "^0.68.2"
+  }
 }
