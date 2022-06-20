@@ -1,0 +1,14 @@
+{
+  "name": "soopa-comp",
+  "version": "1.0.0",
+  "description": "soopa component library",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "component"
+  ],
+  "author": "byyoung",
+  "license": "MIT"
+}
