@@ -1,14 +1,44 @@
 {
   "name": "soopa-comp",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "soopa component library",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "npm run test"
+    "test": "jest --config jestconfig.json",
+    "build": "rimraf ./lib && tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test&& npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "component"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soopa-studio/soopa-comp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/soopa-studio/soopa-comp/issues"
+  },
+  "homepage": "https://github.com/soopa-studio/soopa-comp#readme",
   "author": "byyoung",
-  "license": "MIT"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^28.1.2",
+    "jest": "^28.1.1",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.5",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.7.4"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
